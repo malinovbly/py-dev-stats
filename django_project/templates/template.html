@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template</title>
+</head>
+<body>
+    <header class="main-header">
+        <!-- Логотип-название проекта PyDevStats (Python Developer Statistics, Статистика разработчика на Python) -->
+        <a href="#">
+            <img src="#" alt="Логотип-название проекта">
+        </a>
+    </header>
+
+    <nav class="main-navigation">
+        <!-- Ссылки на все страницы сайта с соответствующими названиями -->
+        <ul>
+            <li>
+                <a href="#">Главная страница</a>
+            </li>
+            <li>
+                <a href="#">Общая статистика</a>
+            </li>
+            <li>
+                <a href="#">Востребованность</a>
+            </li>
+            <li>
+                <a href="#">География</a>
+            </li>
+            <li>
+                <a href="#">Навыки</a>
+            </li>
+            <li>
+                <a href="#">Последние вакансии</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}{% end block %}
+    </main>
+
+    <footer class="main-footer">
+        <!-- ФИО и академическую группа -->
+        <div class="footer-container">
+            <span>Новиков Артемий Алексеевич</span>
+        </div>
+        <div class="footer-container">
+            <span>Группа РИ-230930</span>
+        </div>
+    </footer>
+</body>
+</html>
