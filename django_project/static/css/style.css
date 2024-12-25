@@ -1,0 +1,130 @@
+body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 15px;
+    font-size: 20px;
+
+    color: #4D4C49;
+    background-color: #a1b3be;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* header styles */
+header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 10%;
+    width: 330px;
+    border-radius: 0 0 50px 0;
+    background-color: #4D4C49;
+}
+header a {
+    margin-left: 55px;
+}
+header span {
+    font-family: "Work Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: oblique;
+    font-size: 35px;
+    display: inline-block;
+    color: #a1b3be;
+}
+
+
+/* aside styles */
+aside {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    height: 90%;
+    width: 330px;
+    border-radius: 0 50px 0 0;
+    border-top: #a1b3be solid 10px;
+    background-color: #4D4C49;
+}
+
+.main-menu__items {
+    margin-top: 59px
+}
+
+.main-menu__item {
+    margin: 0 0 20px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 50px 0 0 50px;
+}
+.main-menu__item:hover {
+    background-color: #a1b3be;
+}
+.main-menu__item:hover img {
+    filter: invert(30%) sepia(8%) saturate(196%) hue-rotate(7deg) brightness(92%) contrast(92%);
+}
+.main-menu__item:hover span {
+    color: #4D4C49;
+}
+.main-menu__item:active {
+    background-color: rgba(161, 179, 190, 0.58);
+}
+
+.main-menu__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px 20px 30px;
+}
+
+.main-menu__link.active {
+    background-color: #a1b3be;
+    border-radius: 50px 0 0 50px;
+}
+.main-menu__link.active:active {
+    background-color: rgba(161, 179, 190, 0.58);
+}
+.main-menu__link.active img {
+    filter: invert(30%) sepia(8%) saturate(196%) hue-rotate(7deg) brightness(92%) contrast(92%);
+}
+.main-menu__link.active span {
+    color: #4D4C49;
+}
+
+.main-menu__link img {
+    filter: invert(76%) sepia(3%) saturate(1448%) hue-rotate(159deg) brightness(96%) contrast(80%);
+}
+.main-menu__link span {
+    color: #a1b3be;
+    font-weight: 700;
+}
+
+
+/* main content styles */
+main {
+    margin-left: 30px;
+    margin-top: 30px;
+    position: fixed;
+    top: 0;
+    left: 330px;
+}
+
+
+/* footer styles */
+footer {
+    margin-left: 30px;
+    position: fixed;
+    bottom: 0;
+    left: 330px;
+}
