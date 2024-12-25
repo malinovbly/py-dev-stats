@@ -1,1 +1,10 @@
-<h1>Hello, Django!</h1>
+{% extends "template.html" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h1>Профессия <span>Python-программист</span></h1>
+    <section>
+        <h3>Описание профессии</h3>
+    </section>
+{% endblock %}
