@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import VacancyDescription
 
 
 def index(request):
-    return render(request, 'index.html')
+    content = VacancyDescription.objects.first()
+    return render(request, 'index.html', {'content': content})
 
 
 def general_statistics(request):

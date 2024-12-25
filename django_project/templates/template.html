@@ -65,17 +65,15 @@
         </ul>
     </aside>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+    {% block content %}{% endblock %}
 
     <footer class="main-footer">
-        <!-- ФИО и академическую группа -->
-        <div class="main-footer__container">
-            <span>Студент: Новиков Артемий Алексеевич</span>
-        </div>
+        {# ФИО и академическую группа #}
         <div class="main-footer__container">
             <span>Группа: РИ-230930</span>
+        </div>
+        <div class="main-footer__container">
+            <span>Новиков Артемий Алексеевич</span>
         </div>
     </footer>
 </body>
