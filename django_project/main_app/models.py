@@ -10,3 +10,7 @@ class VacancyDescription(models.Model):
 
     def __str__(self):
         return self.vacancy_name
+
+    class Meta:
+        verbose_name = "Профессия"
+        verbose_name_plural = "Профессии"
