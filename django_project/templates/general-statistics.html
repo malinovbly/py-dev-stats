@@ -3,5 +3,92 @@
 {% block title %}Общая статистика{% endblock %}
 
 {% block content %}
+    <main>
+        <h1>Общая статистика по вакансиям</h1>
 
+        <section>
+            <h3>Динамика уровня зарплат по годам</h3>
+            <div class="image-table-wrapper">
+                <img class="block-image" src="{{ salary_by_year_data.salary_lvl_by_year_img.url }}" width="640" height="480" alt="График 'Динамика уровня зарплат по годам'">
+                <table>
+                   <thead>
+                       <tr><th>Год</th><th>Зарплата (руб.)</th></tr>
+                   </thead>
+                   <tbody>
+                       {% for year, salary in salary_by_year_table %}
+                           <tr>
+                               <td>{{ year }}</td>
+                               <td>{{ salary }}</td>
+                           </tr>
+                       {% endfor %}
+                   </tbody>
+               </table>
+            </div>
+        </section>
+
+        <section>
+            <h3>Динамика количества вакансий по годам</h3>
+            <div class="image-table-wrapper">
+                <img class="block-image" src="{{ vacancies_count_by_year_data.vacs_cnt_by_year_img.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
+                <table>
+                   <thead>
+                       <tr><th>Год</th><th>Количество вакансий</th></tr>
+                   </thead>
+                   <tbody>
+                       {% for year, vacancies_count in vacancies_count_by_year_table %}
+                           <tr>
+                               <td>{{ year }}</td>
+                               <td>{{ vacancies_count }}</td>
+                           </tr>
+                       {% endfor %}
+                   </tbody>
+               </table>
+            </div>
+        </section>
+
+        <section>
+            <h3>Уровень зарплат по городам (в порядке убывания)</h3>
+            <div class="image-table-wrapper">
+                <img class="block-image" src="{{ salary_by_area_data.salary_lvl_by_area_img.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
+                <table>
+                   <thead>
+                       <tr><th>Город</th><th>Зарплата (руб.)</th></tr>
+                   </thead>
+                   <tbody>
+                       {% for area, salary in salary_by_area_table %}
+                           <tr>
+                               <td class="td-area">{{ area }}</td>
+                               <td>{{ salary }}</td>
+                           </tr>
+                       {% endfor %}
+                   </tbody>
+               </table>
+            </div>
+        </section>
+
+        <section>
+            <h3>Доля вакансий по городам (в порядке убывания)</h3>
+            <div class="image-table-wrapper">
+                <img class="block-image" src="{{ vacancies_fraction_by_area_data.vacs_frac_by_area_img.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
+                <table>
+                   <thead>
+                       <tr><th>Город</th><th>Доля вакансий</th></tr>
+                   </thead>
+                   <tbody>
+                       {% for area, fraction in vacancies_fraction_by_area_table %}
+                           <tr>
+                               <td class="td-area">{{ area }}</td>
+                               <td>{{ fraction }}</td>
+                           </tr>
+                       {% endfor %}
+                   </tbody>
+               </table>
+            </div>
+        </section>
+
+        <section>
+            <h3>Топ-20 навыков по годам. Наиболее высокочастотные навыки</h3>
+
+        </section>
+    </main>
 {% endblock %}

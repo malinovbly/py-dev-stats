@@ -1,3 +1,9 @@
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4D4C49 #a1b3be;
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -9,13 +15,17 @@ body {
     color: #4D4C49;
     background-color: #a1b3be;
 }
+section {
+    margin-bottom: 60px;
+}
 h1 {
     margin-left: 70px;
-    margin-top: 5%;
-    margin-bottom: 30px;
+    margin-top: 60px;
+    margin-bottom: 50px;
 }
 h3 {
-    margin-left: 70px;
+    margin-left: 90px;
+    margin-bottom: 0;
 }
 a {
     text-decoration: none;
@@ -25,11 +35,24 @@ ul {
     margin: 0;
     padding: 0;
 }
-.scrollable-content {
-    height: 100%;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: #4D4C49 #a1b3be;
+table {
+    font-size: 16px;
+    border: 1px solid #4D4C49;
+    border-collapse: collapse;
+}
+th {
+    padding: 3px 10px;
+    border: 1px solid #4D4C49;
+    border-collapse: collapse;
+}
+td {
+    padding: 3px 10px;
+    border: 1px solid #4D4C49;
+    text-align: right;
+    border-collapse: collapse;
+}
+.td-area {
+    text-align: left;
 }
 
 
@@ -129,7 +152,6 @@ aside {
 /* main styles */
 main {
     margin: 0 0 0 400px;
-    position: fixed;
 }
 
 
@@ -162,4 +184,17 @@ footer {
     width: 75%;
     height: 50%;
     line-height: 25px;
+}
+
+
+/* general-statistics.html */
+.block-image {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.image-table-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: left;
 }
