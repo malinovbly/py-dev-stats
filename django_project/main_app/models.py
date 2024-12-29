@@ -12,8 +12,8 @@ class VacancyDescription(models.Model):
         return self.vacancy_name
 
     class Meta:
-        verbose_name = "Профессия"
-        verbose_name_plural = "Профессии"
+        verbose_name = "Описание профессии (Главная страница)"
+        verbose_name_plural = "Описания профессий (Главная страница)"
 
 
 class SalaryLevelByYearData(models.Model):
@@ -25,8 +25,8 @@ class SalaryLevelByYearData(models.Model):
         return f'Зарплаты по годам id={self.id}'
 
     class Meta:
-        verbose_name = "Динамика уровня зарплат по годам"
-        verbose_name_plural = "Динамики уровня зарплат по годам"
+        verbose_name = "Динамика уровня зарплат по годам (Общая статистика)"
+        verbose_name_plural = "Динамики уровня зарплат по годам (Общая статистика)"
 
 
 class VacanciesCountByYearData(models.Model):
@@ -38,8 +38,8 @@ class VacanciesCountByYearData(models.Model):
         return f'Количество вакансий по годам id={self.id}'
 
     class Meta:
-        verbose_name = "Динамика количества вакансий по годам"
-        verbose_name_plural = "Динамики количества вакансий по годам"
+        verbose_name = "Динамика количества вакансий по годам (Общая статистика)"
+        verbose_name_plural = "Динамики количества вакансий по годам (Общая статистика)"
 
 
 class SalaryLevelByAreaData(models.Model):
@@ -51,8 +51,8 @@ class SalaryLevelByAreaData(models.Model):
         return f'Зарплаты по городам id={self.id}'
 
     class Meta:
-        verbose_name = "Уровень зарплат по городам"
-        verbose_name_plural = "Уровни зарплат по городам"
+        verbose_name = "Уровень зарплат по городам (Общая статистика)"
+        verbose_name_plural = "Уровни зарплат по городам (Общая статистика)"
 
 
 class VacanciesFractionByAreaData(models.Model):
@@ -64,5 +64,5 @@ class VacanciesFractionByAreaData(models.Model):
         return f'Доли вакансий по городам id={self.id}'
 
     class Meta:
-        verbose_name = "Доля вакансий по городам"
-        verbose_name_plural = "Доли вакансий по городам"
+        verbose_name = "Доля вакансий по городам (Общая статистика)"
+        verbose_name_plural = "Доли вакансий по городам (Общая статистика)"
