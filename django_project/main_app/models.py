@@ -66,3 +66,16 @@ class VacanciesFractionByAreaData(models.Model):
     class Meta:
         verbose_name = "Доля вакансий по городам (Общая статистика)"
         verbose_name_plural = "Доли вакансий по городам (Общая статистика)"
+
+
+class Top20KeySkillsByYearData(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Данные')
+    top_20_key_skills_by_year = models.TextField()
+    top_20_key_skills_by_year_img = models.ImageField(upload_to='media/', null=True, blank=False, verbose_name='График таблицы "Топ-20 навыков по годам"')
+
+    def __str__(self):
+        return f'Навыки по годам id={self.id}'
+
+    class Meta:
+        verbose_name = "Топ навыков по годам (Общая статистика)"
+        verbose_name_plural = "Топы навыков по годам (Общая статистика)"

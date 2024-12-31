@@ -3,7 +3,8 @@ from .models import (VacancyDescription,
                      SalaryLevelByYearData,
                      VacanciesCountByYearData,
                      SalaryLevelByAreaData,
-                     VacanciesFractionByAreaData)
+                     VacanciesFractionByAreaData,
+                     Top20KeySkillsByYearData)
 
 
 @admin.register(VacancyDescription)
@@ -32,5 +33,11 @@ class SalaryLevelByAreaDataAdmin(admin.ModelAdmin):
 
 @admin.register(VacanciesFractionByAreaData)
 class VacanciesFractionByAreaDataAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+    search_fields = ('id', 'name')
+
+
+@admin.register(Top20KeySkillsByYearData)
+class Top20KeySkillsByYearDataAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
     search_fields = ('id', 'name')

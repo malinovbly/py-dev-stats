@@ -53,7 +53,10 @@ td {
     text-align: right;
     border-collapse: collapse;
 }
-.td-area {
+p {
+    margin-right: 100px;
+}
+.td-text {
     text-align: left;
 }
 

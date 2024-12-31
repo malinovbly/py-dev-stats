@@ -1,4 +1,5 @@
 import pandas as pd
+from collections import Counter
 
 
 ## Динамика уровня зарплат по годам
@@ -79,10 +80,46 @@ def get_vacs_frac_by_area(vacancies):
     return vacs_frac_by_area
 
 
-if __name__ == '__main__':
-    df_correct_vacs_only = pd.read_csv('vacancies_2024_correct_only.csv', sep=',', low_memory=False)
+## Топ-20 навыков по годам.
+def get_top_20_key_skills_by_year(vacancies):
 
-    salary_lvl_by_year_data = get_salary_lvl_by_year(df_correct_vacs_only)
-    vacs_cnt_by_year_data = get_vacancies_count_by_year(df_correct_vacs_only)
-    salary_lvl_by_area_data = get_salary_lvl_by_area(df_correct_vacs_only)
-    vacs_frac_by_area_data = get_vacs_frac_by_area(df_correct_vacs_only)
+    ## 20 самых популярных навыков
+    def get_top_20_key_skills(vacancies):
+        key_skills = (vacancies['key_skills']
+                      .dropna()
+                      .str.split('\n')
+                      .explode()
+                      .tolist()
+                      )
+        c = Counter(key_skills)
+        return c.most_common(20)
+
+    top_20_key_skills = get_top_20_key_skills(vacancies)
+
+    years = list(i for i in range(2003, 2024 + 1))
+    vc_copy = vacancies.copy()
+    year_groups = vc_copy.groupby(vc_copy.published_at.str[:4])
+
+    skills_by_year = dict()
+    for year in years:
+        group = year_groups.get_group(str(year))['key_skills'].dropna().str.split('\n').explode().tolist()
+        counter = Counter(group)
+
+        year_dynamic = list()
+        for key, value in counter.items():
+            if key in top_20_key_skills:
+                year_dynamic.append((key, value))
+        year_dynamic = sorted(year_dynamic, key=lambda x: x[0])
+        skills_by_year[year] = year_dynamic
+
+    return skills_by_year
+
+
+if __name__ == '__main__':
+    correct_vacs = pd.read_csv('vacancies_2024_correct_only.csv', sep=',', low_memory=False)
+
+    salary_lvl_by_year_data = get_salary_lvl_by_year(correct_vacs)
+    vacs_cnt_by_year_data = get_vacancies_count_by_year(correct_vacs)
+    salary_lvl_by_area_data = get_salary_lvl_by_area(correct_vacs)
+    vacs_frac_by_area_data = get_vacs_frac_by_area(correct_vacs)
+    top_20_key_skills_by_year = get_top_20_key_skills_by_year(correct_vacs)
