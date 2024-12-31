@@ -72,13 +72,14 @@
                 <img class="block-image" src="{{ vacancies_fraction_by_area_data.vacs_frac_by_area_img.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
                 <table>
                    <thead>
-                       <tr><th>Город</th><th>Доля вакансий</th></tr>
+                       <tr><th>Город</th><th>Доля</th><th>%</th></tr>
                    </thead>
                    <tbody>
-                       {% for area, fraction in vacancies_fraction_by_area_table %}
+                       {% for area, fraction, percentage in vacancies_fraction_by_area_table %}
                            <tr>
                                <td class="td-area">{{ area }}</td>
                                <td>{{ fraction }}</td>
+                               <td>{{ percentage }}</td>
                            </tr>
                        {% endfor %}
                    </tbody>
@@ -90,5 +91,6 @@
             <h3>Топ-20 навыков по годам. Наиболее высокочастотные навыки</h3>
 
         </section>
+
     </main>
 {% endblock %}

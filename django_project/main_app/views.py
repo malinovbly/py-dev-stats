@@ -42,9 +42,11 @@ def general_statistics(request):
     data4 = vacancies_fraction_by_area_data.vacs_frac_by_area.replace('\r\n', ' ').split(', ')
     vacancies_fraction_by_area_table = [d.split(': ') for d in data4]
     for d in vacancies_fraction_by_area_table:
-        d[1] = '{0:,}'.format(float(d[1])).replace(',', ' ')
         if (len(d[1]) - d[1].find('.') - 1) < 3:
             d[1] += '0'
+        percentage = round(float(d[1]) * 100, 2)
+        d.append(f'{percentage}%')
+
 
     return render(
         request,
@@ -63,11 +65,27 @@ def general_statistics(request):
 
 
 def demand(request):
-    return render(request, 'demand.html')
+    vacancy_name = VacancyDescription.objects.first().vacancy_name
+
+    return render(
+        request,
+        'demand.html',
+        {
+            'vacancy_name': vacancy_name,
+        }
+    )
 
 
 def geography(request):
-    return render(request, 'geography.html')
+    vacancy_name = VacancyDescription.objects.first().vacancy_name
+
+    return render(
+        request,
+        'geography.html',
+        {
+            'vacancy_name': vacancy_name,
+        }
+    )
 
 
 def skills(request):

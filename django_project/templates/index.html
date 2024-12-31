@@ -4,7 +4,7 @@
 
 {% block content %}
     <main>
-        <h1>Профессия <span>{{ content.vacancy_name }}</span></h1>
+        <h1>Профессия <span>"{{ content.vacancy_name }}"</span></h1>
         <h3>Описание профессии</h3>
         <section>
             <img src="{{ content.image.url }}" style="max-width: 300px; height: auto;" alt="Изображение '{{ content.vacancy_name }}'">

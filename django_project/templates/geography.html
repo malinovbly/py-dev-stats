@@ -3,5 +3,50 @@
 {% block title %}География{% endblock %}
 
 {% block content %}
+    <main>
+        <h1>Профессия <span>"{{ vacancy_name }}"</span></h1>
+        <h2>Распределение профессии по городам</h2>
 
+        <section>
+            <h3>Уровень зарплат по городам (в порядке убывания)</h3>
+            <div class="image-table-wrapper">
+                <img class="block-image" src="{{ salary_by_area_data.salary_lvl_by_area_img.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
+                <table>
+                   <thead>
+                       <tr><th>Город</th><th>Зарплата (руб.)</th></tr>
+                   </thead>
+                   <tbody>
+                       {% for area, salary in salary_by_area_table %}
+                           <tr>
+                               <td class="td-area">{{ area }}</td>
+                               <td>{{ salary }}</td>
+                           </tr>
+                       {% endfor %}
+                   </tbody>
+               </table>
+            </div>
+        </section>
+
+        <section>
+            <h3>Доля вакансий по городам (в порядке убывания)</h3>
+            <div class="image-table-wrapper">
+                <img class="block-image" src="{{ vacancies_fraction_by_area_data.vacs_frac_by_area_img.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
+                <table>
+                   <thead>
+                       <tr><th>Город</th><th>Доля</th><th>%</th></tr>
+                   </thead>
+                   <tbody>
+                       {% for area, fraction, percentage in vacancies_fraction_by_area_table %}
+                           <tr>
+                               <td class="td-area">{{ area }}</td>
+                               <td>{{ fraction }}</td>
+                               <td>{{ percentage }}</td>
+                           </tr>
+                       {% endfor %}
+                   </tbody>
+               </table>
+            </div>
+        </section>
+
+    </main>
 {% endblock %}
