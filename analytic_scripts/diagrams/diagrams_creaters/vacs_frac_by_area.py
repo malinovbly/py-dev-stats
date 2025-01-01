@@ -35,13 +35,15 @@ def create_vacs_frac_by_area_diagram(data):
 
     plt.tight_layout()
 
-    plt.savefig('vacs_frac_by_area.png', transparent=True)
+    # plt.savefig('vacs_frac_by_area.png', transparent=True)
+    # plt.savefig('vacancy_vacs_frac_by_area.png', transparent=True)
+    # plt.show()
 
 
 if __name__ == '__main__':
     vacs_frac_by_area = {
         'Москва': 0.341,
-        'Города с долей <1%': 0.333,
+        'Доля <1%': 0.333,
         'Санкт-Петербург': 0.102,
         'Минск': 0.03,
         'Новосибирск': 0.024,
@@ -57,3 +59,22 @@ if __name__ == '__main__':
         'Пермь': 0.01
     }
     create_vacs_frac_by_area_diagram(vacs_frac_by_area)
+
+    vacancy_vacs_frac_by_area = {
+        'Москва': 0.379,
+        'Доля <1%': 0.239,
+        'Санкт-Петербург': 0.129,
+        'Минск': 0.044,
+        'Новосибирск': 0.029,
+        'Екатеринбург': 0.026,
+        'Казань': 0.026,
+        'Нижний Новгород': 0.025,
+        'Киев': 0.02,
+        'Воронеж': 0.018,
+        'Алматы': 0.015,
+        'Ростов-на-Дону': 0.014,
+        'Краснодар': 0.013,
+        'Самара': 0.012,
+        'Уфа': 0.01
+    }
+    create_vacs_frac_by_area_diagram(vacancy_vacs_frac_by_area)

@@ -27,7 +27,9 @@ def create_salary_lvl_by_area_diagram(data):
 
     plt.tight_layout()
 
-    plt.savefig('salary_lvl_by_area.png', transparent=True)
+    # plt.savefig('salary_lvl_by_area.png', transparent=True)
+    # plt.savefig('vacancy_salary_lvl_by_area.png', transparent=True)
+    # plt.show()
 
 
 if __name__ == '__main__':
@@ -49,3 +51,22 @@ if __name__ == '__main__':
     }
     salary_lvl_by_area = dict(sorted(salary_lvl_by_area.items(), key=lambda item: item[1], reverse=False))
     create_salary_lvl_by_area_diagram(salary_lvl_by_area)
+
+    vacancy_salary_lvl_by_area = {
+        'Москва': 175513.42,
+        'Минск': 161630.24,
+        'Киев': 152350.13,
+        'Казань': 147160.84,
+        'Санкт-Петербург': 143730.24,
+        'Самара': 143360.83,
+        'Нижний Новгород': 142402.24,
+        'Новосибирск': 140666.03,
+        'Воронеж': 131387.84,
+        'Екатеринбург': 127922.23,
+        'Краснодар': 123515.42,
+        'Ростов-на-Дону': 120732.61,
+        'Алматы': 112150.53,
+        'Уфа': 107261.07
+    }
+    vacancy_salary_lvl_by_area = dict(sorted(vacancy_salary_lvl_by_area.items(), key=lambda item: item[1], reverse=False))
+    create_salary_lvl_by_area_diagram(vacancy_salary_lvl_by_area)

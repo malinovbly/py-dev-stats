@@ -27,7 +27,9 @@ def create_vacs_cnt_by_year_diagram(data):
 
     plt.tight_layout()
 
-    plt.savefig('vacs_cnt_by_year.png', transparent=True)
+    # plt.savefig('vacs_cnt_by_year.png', transparent=True)
+    # plt.savefig('vacancy_vacs_cnt_by_year.png', transparent=True)
+    # plt.show()
 
 
 if __name__ == '__main__':
@@ -56,3 +58,29 @@ if __name__ == '__main__':
         2024: 553443
     }
     create_vacs_cnt_by_year_diagram(vacs_cnt_by_year)
+
+    vacancy_vacs_cnt_by_year = {
+        2003: 0,
+        2004: 0,
+        2005: 0,
+        2006: 5,
+        2007: 10,
+        2008: 38,
+        2009: 60,
+        2010: 169,
+        2011: 389,
+        2012: 714,
+        2013: 1188,
+        2014: 4263,
+        2015: 4146,
+        2016: 3039,
+        2017: 3536,
+        2018: 4840,
+        2019: 5735,
+        2020: 7689,
+        2021: 13024,
+        2022: 11696,
+        2023: 10771,
+        2024: 8491
+    }
+    create_vacs_cnt_by_year_diagram(vacancy_vacs_cnt_by_year)

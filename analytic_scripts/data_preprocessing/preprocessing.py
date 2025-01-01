@@ -78,6 +78,15 @@ def drop_incorrect_vacs(df):
     return df
 
 
+## Фильтр по профессии
+def filter_df_by_vac(df):
+    filter_keywords = ['Python-программист', 'python', 'питон', 'пайтон']
+    pattern = '|'.join(filter_keywords)
+    result = df[df['name'].str.contains(pattern, case=False, na=False)]
+
+    return result
+
+
 if __name__ == '__main__':
     vacancies_2024_df = pd.read_csv('vacancies_2024.csv', sep=',', low_memory=False)
     df_copy = vacancies_2024_df.copy()
@@ -86,3 +95,6 @@ if __name__ == '__main__':
     df_converted_salaries = convert_salaries(df_copy)
     df_correct_vacs_only = drop_incorrect_vacs(df_converted_salaries)
     df_correct_vacs_only.to_csv('vacancies_2024_correct_only.csv', index=False)
+
+    df_filtered = filter_df_by_vac(df_correct_vacs_only)
+    df_filtered.to_csv('filtered_vacancies.csv', index=False)

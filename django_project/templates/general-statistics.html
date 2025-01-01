@@ -9,7 +9,7 @@
         <section>
             <h3>Динамика уровня зарплат по годам</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ salary_by_year_data.salary_lvl_by_year_img.url }}" width="640" height="480" alt="График 'Динамика уровня зарплат по годам'">
+                <img class="block-image" src="{{ salary_by_year_data.image.url }}" width="640" height="480" alt="График 'Динамика уровня зарплат по годам'">
                 <table>
                    <thead>
                        <tr><th>Год</th><th>Зарплата (руб.)</th></tr>
@@ -29,7 +29,7 @@
         <section>
             <h3>Динамика количества вакансий по годам</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ vacancies_count_by_year_data.vacs_cnt_by_year_img.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
+                <img class="block-image" src="{{ vacancies_count_by_year_data.image.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
                 <table>
                    <thead>
                        <tr><th>Год</th><th>Количество вакансий</th></tr>
@@ -49,7 +49,7 @@
         <section>
             <h3>Уровень зарплат по городам (в порядке убывания)</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ salary_by_area_data.salary_lvl_by_area_img.url }}" width="640" height="480" alt="График 'Динамика уровня зарплат по городам'">
+                <img class="block-image" src="{{ salary_by_area_data.image.url }}" width="640" height="480" alt="График 'Динамика уровня зарплат по городам'">
                 <table>
                    <thead>
                        <tr><th>Город</th><th>Зарплата (руб.)</th></tr>
@@ -69,7 +69,7 @@
         <section>
             <h3>Доля вакансий по городам (в порядке убывания)</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ vacancies_fraction_by_area_data.vacs_frac_by_area_img.url }}" width="640" height="480" alt="График 'Доля вакансий по городам (в порядке убывания)'">
+                <img class="block-image" src="{{ vacancies_fraction_by_area_data.image.url }}" width="640" height="480" alt="График 'Доля вакансий по городам (в порядке убывания)'">
                 <table>
                    <thead>
                        <tr><th>Город</th><th>Доля</th><th>%</th></tr>
@@ -89,10 +89,9 @@
 
         <section>
             <h3>Топ-20 навыков за всё время по годам</h3>
+
             <div class="image-table-wrapper">
-                <div>
-                    <p>20 самых популярных навыков</p>
-                    <p>за всё время:</p>
+                <div class="tooltip-container">
                     <table>
                        <thead>
                            <tr><th>Навык</th><th>Частота</th><th>%</th></tr>
@@ -107,13 +106,17 @@
                            {% endfor %}
                        </tbody>
                    </table>
+
+                    <span class="tooltip">?</span>
+                    <p class="tooltip-text">Топ-20 самых высокочастотных навыков за всё время</p>
                 </div>
-                <div>
-                    <p>Частота 20-ти самых популярных навыков</p>
-                    <p>за всё время по каждому году:</p>
-                    <img class="block-image" src="{{ top_20_key_skills_by_year_data.top_20_key_skills_by_year_img.url }}" width="640" height="480" alt="График 'Топ-20 навыков по годам. Наиболее высокочастотные навыки'">
+                <div class="tooltip-container">
+                    <img class="block-image" src="{{ top_20_key_skills_by_year_data.image.url }}" width="640" height="480" alt="График 'Топ-20 навыков по годам. Наиболее высокочастотные навыки'">
+                    <span class="tooltip">?</span>
+                    <p class="tooltip-text">Распределение самых высокочастотных навыков за всё время для каждого года</p>
                 </div>
             </div>
+
         </section>
 
     </main>

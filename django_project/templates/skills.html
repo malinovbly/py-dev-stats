@@ -3,5 +3,38 @@
 {% block title %}Навыки{% endblock %}
 
 {% block content %}
+    <main>
+        <h1>Профессия <span>"{{ vacancy_name }}"</span></h1>
 
+        <section>
+            <h3>Топ-20 навыков за всё время по годам</h3>
+            <div class="image-table-wrapper">
+                <div class="tooltip-container">
+                    <table>
+                       <thead>
+                           <tr><th>Навык</th><th>Частота</th><th>%</th></tr>
+                       </thead>
+                       <tbody>
+                           {% for skill, fraction, percentage in top_20_key_skills_by_year_table %}
+                               <tr>
+                                   <td class="td-text">{{ skill }}</td>
+                                   <td>{{ fraction }}</td>
+                                   <td>{{ percentage }}</td>
+                               </tr>
+                           {% endfor %}
+                       </tbody>
+                   </table>
+
+                    <span class="tooltip">?</span>
+                    <p class="tooltip-text">Топ-20 самых высокочастотных навыков за всё время</p>
+                </div>
+                <div class="tooltip-container">
+                    <img class="block-image" src="{{ top_20_key_skills_by_year_data.image.url }}" width="640" height="480" alt="График 'Топ-20 навыков по годам. Наиболее высокочастотные навыки'">
+                    <span class="tooltip">?</span>
+                    <p class="tooltip-text">Распределение самых высокочастотных навыков за всё время для каждого года</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
 {% endblock %}

@@ -94,28 +94,29 @@ def get_top_20_key_skills_by_year(vacancies):
         c = Counter(key_skills)
         return c.most_common(20)
 
-    top_20_key_skills = get_top_20_key_skills(vacancies)
+    top_20_key_skills = dict(get_top_20_key_skills(vacancies))
 
-    years = list(i for i in range(2003, 2024 + 1))
     vc_copy = vacancies.copy()
     year_groups = vc_copy.groupby(vc_copy.published_at.str[:4])
 
     skills_by_year = dict()
-    for year in years:
+    for year in year_groups.groups.keys():
         group = year_groups.get_group(str(year))['key_skills'].dropna().str.split('\n').explode().tolist()
         counter = Counter(group)
 
         year_dynamic = list()
         for key, value in counter.items():
-            if key in top_20_key_skills:
+            if key in top_20_key_skills.keys():
                 year_dynamic.append((key, value))
         year_dynamic = sorted(year_dynamic, key=lambda x: x[0])
-        skills_by_year[year] = year_dynamic
+
+        skills_by_year[int(year)] = year_dynamic
 
     return skills_by_year
 
 
 if __name__ == '__main__':
+    ## Все вакансии (корректные)
     correct_vacs = pd.read_csv('vacancies_2024_correct_only.csv', sep=',', low_memory=False)
 
     salary_lvl_by_year_data = get_salary_lvl_by_year(correct_vacs)
@@ -123,3 +124,13 @@ if __name__ == '__main__':
     salary_lvl_by_area_data = get_salary_lvl_by_area(correct_vacs)
     vacs_frac_by_area_data = get_vacs_frac_by_area(correct_vacs)
     top_20_key_skills_by_year = get_top_20_key_skills_by_year(correct_vacs)
+
+
+    ## Вакансии, отфильтрованные по профессии 'Python-программист'
+    filtered_vacs = pd.read_csv('filtered_vacancies.csv', sep=',', low_memory=False)
+
+    vacancy_salary_lvl_by_year_data = get_salary_lvl_by_year(filtered_vacs)
+    vacancy_vacs_cnt_by_year_data = get_vacancies_count_by_year(filtered_vacs)
+    vacancy_salary_lvl_by_area_data = get_salary_lvl_by_area(filtered_vacs)
+    vacancy_vacs_frac_by_area_data = get_vacs_frac_by_area(filtered_vacs)
+    vacancy_top_20_key_skills_by_year = get_top_20_key_skills_by_year(filtered_vacs)
