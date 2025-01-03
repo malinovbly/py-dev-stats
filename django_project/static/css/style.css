@@ -21,7 +21,7 @@ h1 {
     margin-bottom: 50px;
 }
 h2 {
-    margin-left: 70px;
+    margin-left: 90px;
     margin-bottom: 60px;
 }
 h3 {
@@ -30,6 +30,13 @@ h3 {
 }
 a {
     text-decoration: none;
+}
+h2 a {
+    color: #4D4C49;
+    border: #4D4C49 solid 2px;
+    border-radius: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 ul {
     list-style-type: none;
@@ -251,4 +258,33 @@ footer {
     margin-top: 20px;
     display: flex;
     justify-content: left;
+}
+
+
+/* latest-vacancies.html */
+.vacancy-section {
+    padding: 20px;
+    border: #4D4C49 solid 5px;
+    border-radius: 50px;
+    width: 950px;
+}
+.vacancy-section h3 {
+    display: block;
+    text-align: center;
+    margin: 25px auto 40px;
+}
+.vacancy-section div {
+    margin-left: 30px;
+}
+.vacancy-section p, .vacancy-section div > strong {
+    line-height: 30px;
+    margin-left: 20px;
+}
+.vacancy-section ul {
+    list-style-type: disc;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+.vacancy-section ul li {
+    line-height: 30px;
 }

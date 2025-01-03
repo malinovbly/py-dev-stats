@@ -3,5 +3,24 @@
 {% block title %}Последние вакансии{% endblock %}
 
 {% block content %}
+    <main>
+        <h1>Профессия <span>"{{ vacancy_name }}"</span></h1>
+        <h2>Вакансии, выложенные на <a href="https://hh.ru">HH.ru</a> за последние 24 часа</h2>
 
+        {% for recent_vac in recent_vacs %}
+        	<section class="vacancy-section">
+                <h3>{{ recent_vac.name }}</h3>
+
+                <p><b>Компания:</b> {{ recent_vac.employer }}</p>
+                <p><b>Оклад:</b> {{ recent_vac.salary }}</p>
+                <p><b>Регион:</b> {{ recent_vac.area_name }}</p>
+                <p><b>Дата публикации:</b> {{ recent_vac.published_at }}</p>
+                <p><b>Навыки:</b> {{ recent_vac.key_skills }}</p>
+
+                <p><b>Описание:</b></p>
+                <div>{{ recent_vac.description|safe }}</div>
+            </section>
+        {% endfor %}
+
+    </main>
 {% endblock %}
