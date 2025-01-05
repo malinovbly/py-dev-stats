@@ -11,13 +11,13 @@
         	<section class="vacancy-section">
                 <h3>{{ recent_vac.name }}</h3>
 
-                <p><b>Компания:</b> {{ recent_vac.employer }}</p>
-                <p><b>Оклад:</b> {{ recent_vac.salary }}</p>
-                <p><b>Регион:</b> {{ recent_vac.area_name }}</p>
-                <p><b>Дата публикации:</b> {{ recent_vac.published_at }}</p>
-                <p><b>Навыки:</b> {{ recent_vac.key_skills }}</p>
+                <p><b><em>Компания:</em></b> {{ recent_vac.employer }}</p>
+                <p><b><em>Оклад:</em></b> {{ recent_vac.salary }}</p>
+                <p><b><em>Регион:</em></b> {{ recent_vac.area_name }}</p>
+                <p><b><em>Дата публикации:</em></b> {{ recent_vac.published_at }}</p>
+                <p><b><em>Навыки:</em></b> {{ recent_vac.key_skills }}</p>
 
-                <p><b>Описание:</b></p>
+                <p><b><em>Описание:</em></b></p>
                 <div>{{ recent_vac.description|safe }}</div>
             </section>
         {% endfor %}
