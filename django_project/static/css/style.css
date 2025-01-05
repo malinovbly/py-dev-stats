@@ -263,15 +263,16 @@ footer {
 .description-wrapper p {
     font-size: 16px;
     margin-left: 70px;
-    /*width: 75%;*/
     height: 50%;
     line-height: 25px;
 }
 .description-wrapper ul {
+    width: 80%;
     list-style-type: disc;
     margin-left: 10%;
 }
 .description-wrapper ol {
+    width: 85%;
     margin-left: 5%;
 }
 .description-wrapper li {
