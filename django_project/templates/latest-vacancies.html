@@ -5,7 +5,7 @@
 {% block content %}
     <main>
         <h1>Профессия <span>"{{ vacancy_name }}"</span></h1>
-        <h2>Вакансии, выложенные на <a href="https://hh.ru">HH.ru</a> за последние 24 часа</h2>
+        <h2>Вакансии, выложенные на <a href="https://hh.ru">HH.ru</a> за последние 24 часа ({{ recent_vacs|length }})</h2>
 
         {% for recent_vac in recent_vacs %}
         	<section class="vacancy-section">
