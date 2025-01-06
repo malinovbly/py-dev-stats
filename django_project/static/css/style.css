@@ -147,9 +147,11 @@ header {
     width: 330px;
     border-radius: 0 0 50px 0;
     background-color: #4D4C49;
+    text-align: center;
 }
 header a {
-    margin-left: 55px;
+    margin-left: auto;
+    margin-right: auto;
 }
 header span {
     font-family: "Work Sans", serif;
@@ -252,7 +254,11 @@ footer {
 .main-footer__container {
     font-size: 16px;
     font-weight: 700;
-    margin: 5px 0 5px 30px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+}
+.main-footer__container:last-of-type {
+    margin-bottom: 0;
 }
 
 
