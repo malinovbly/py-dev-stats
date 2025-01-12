@@ -26,38 +26,38 @@
 
     <aside class="main-menu">
         <ul class="main-menu__items">
-            <li class="main-menu__item">
-                <a class="main-menu__link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url "index" %}">
+            <li class="main-menu__item {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+                <a class="main-menu__link" href="{% url "index" %}">
                     <img src="{% static "img/icons/icon-home.svg" %}" alt="icon-home" width="30" height="30">
                     <span>Главная страница</span>
                 </a>
             </li>
-            <li class="main-menu__item">
-                <a class="main-menu__link {% if request.resolver_match.url_name == 'general-statistics' %}active{% endif %}" href="{% url "general-statistics" %}">
+            <li class="main-menu__item {% if request.resolver_match.url_name == 'general-statistics' %}active{% endif %}">
+                <a class="main-menu__link" href="{% url "general-statistics" %}">
                     <img src="{% static "img/icons/icon-stats.svg" %}" alt="icon-stats" width="30" height="30">
                     <span>Общая статистика</span>
                 </a>
             </li>
-            <li class="main-menu__item">
-                <a class="main-menu__link {% if request.resolver_match.url_name == 'demand' %}active{% endif %}" href="{% url "demand" %}">
+            <li class="main-menu__item {% if request.resolver_match.url_name == 'demand' %}active{% endif %}">
+                <a class="main-menu__link" href="{% url "demand" %}">
                     <img src="{% static "img/icons/icon-demand.svg" %}" alt="icon-" width="30" height="30">
                     <span>Востребованность</span>
                 </a>
             </li>
-            <li class="main-menu__item">
-                <a class="main-menu__link {% if request.resolver_match.url_name == 'geography' %}active{% endif %}" href="{% url "geography" %}">
+            <li class="main-menu__item {% if request.resolver_match.url_name == 'geography' %}active{% endif %}">
+                <a class="main-menu__link" href="{% url "geography" %}">
                     <img src="{% static "img/icons/icon-globe.svg" %}" alt="icon-" width="30" height="30">
                     <span>География</span>
                 </a>
             </li>
-            <li class="main-menu__item">
-                <a class="main-menu__link {% if request.resolver_match.url_name == 'skills' %}active{% endif %}" href="{% url "skills" %}">
+            <li class="main-menu__item {% if request.resolver_match.url_name == 'skills' %}active{% endif %}">
+                <a class="main-menu__link" href="{% url "skills" %}">
                     <img src="{% static "img/icons/icon-skills.svg" %}" alt="icon-" width="30" height="30">
                     <span>Навыки</span>
                 </a>
             </li>
-            <li class="main-menu__item">
-                <a class="main-menu__link {% if request.resolver_match.url_name == 'latest-vacancies' %}active{% endif %}" href="{% url "latest-vacancies" %}">
+            <li class="main-menu__item {% if request.resolver_match.url_name == 'latest-vacancies' %}active{% endif %}">
+                <a class="main-menu__link" href="{% url "latest-vacancies" %}">
                     <img src="{% static "img/icons/icon-clock.svg" %}" alt="icon-" width="30" height="30">
                     <span>Последние вакансии</span>
                 </a>
