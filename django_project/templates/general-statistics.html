@@ -10,81 +10,32 @@
         <section>
             <h3>Динамика уровня зарплат по годам</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ salary_by_year_data.image.url }}" width="640" height="480" alt="График 'Динамика уровня зарплат по годам'">
-                <table>
-                   <thead>
-                       <tr><th>Год</th><th>Зарплата (руб.)</th></tr>
-                   </thead>
-                   <tbody>
-                       {% for year, salary in salary_by_year_table %}
-                           <tr>
-                               <td>{{ year }}</td>
-                               <td>{{ salary }}</td>
-                           </tr>
-                       {% endfor %}
-                   </tbody>
-               </table>
+                <img class="block-image" src="{{ salary_by_year.image.url }}" width="640" height="480" alt="График 'Динамика уровня зарплат по годам'">
+                {{ salary_by_year.table_data|safe }}
             </div>
         </section>
 
         <section>
             <h3>Динамика количества вакансий по годам</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ vacancies_count_by_year_data.image.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
-                <table>
-                   <thead>
-                       <tr><th>Год</th><th>Количество вакансий</th></tr>
-                   </thead>
-                   <tbody>
-                       {% for year, vacancies_count in vacancies_count_by_year_table %}
-                           <tr>
-                               <td>{{ year }}</td>
-                               <td>{{ vacancies_count }}</td>
-                           </tr>
-                       {% endfor %}
-                   </tbody>
-               </table>
+                <img class="block-image" src="{{ vacancies_count_by_year.image.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
+                {{ vacancies_count_by_year.table_data|safe }}
             </div>
         </section>
 
         <section>
             <h3>Уровень зарплат по городам (в порядке убывания)</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ salary_by_area_data.image.url }}" width="640" height="480" alt="График 'Динамика уровня зарплат по городам'">
-                <table>
-                   <thead>
-                       <tr><th>Город</th><th>Зарплата (руб.)</th></tr>
-                   </thead>
-                   <tbody>
-                       {% for area, salary in salary_by_area_table %}
-                           <tr>
-                               <td class="td-text">{{ area }}</td>
-                               <td>{{ salary }}</td>
-                           </tr>
-                       {% endfor %}
-                   </tbody>
-               </table>
+                <img class="block-image" src="{{ salary_by_area.image.url }}" width="640" height="480" alt="График 'Динамика уровня зарплат по городам'">
+                {{ salary_by_area.table_data|safe }}
             </div>
         </section>
 
         <section>
             <h3>Доля вакансий по городам (в порядке убывания)</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ vacancies_fraction_by_area_data.image.url }}" width="640" height="480" alt="График 'Доля вакансий по городам (в порядке убывания)'">
-                <table>
-                   <thead>
-                       <tr><th>Город</th><th>Доля</th><th>%</th></tr>
-                   </thead>
-                   <tbody>
-                       {% for area, fraction, percentage in vacancies_fraction_by_area_table %}
-                           <tr>
-                               <td class="td-text">{{ area }}</td>
-                               <td>{{ fraction }}</td>
-                               <td>{{ percentage }}</td>
-                           </tr>
-                       {% endfor %}
-                   </tbody>
-               </table>
+                <img class="block-image" src="{{ vacancies_fraction_by_area.image.url }}" width="640" height="480" alt="График 'Доля вакансий по городам (в порядке убывания)'">
+                {{ vacancies_fraction_by_area.table_data|safe }}
             </div>
         </section>
 
@@ -94,29 +45,14 @@
 
             <div class="image-table-wrapper">
                 <div class="tooltip-container">
-                    <table class="tooltip">
-                       <thead>
-                           <tr><th>Навык</th><th>Частота</th><th>%</th></tr>
-                       </thead>
-                       <tbody>
-                           {% for skill, fraction, percentage in top_20_key_skills_by_year_table %}
-                               <tr>
-                                   <td class="td-text">{{ skill }}</td>
-                                   <td>{{ fraction }}</td>
-                                   <td>{{ percentage }}</td>
-                               </tr>
-                           {% endfor %}
-                       </tbody>
-                   </table>
-
+                    {{ top_20_key_skills_by_year.table_data|safe }}
                     <p class="tooltip-text">Топ-20 самых высокочастотных навыков за всё время</p>
                 </div>
                 <div class="tooltip-container">
-                    <img class="block-image tooltip" src="{{ top_20_key_skills_by_year_data.image.url }}" width="640" height="480" alt="График 'Топ-20 навыков по годам. Наиболее высокочастотные навыки'">
+                    <img class="block-image tooltip" src="{{ top_20_key_skills_by_year.image.url }}" width="640" height="480" alt="График 'Топ-20 навыков по годам. Наиболее высокочастотные навыки'">
                     <p class="tooltip-text">Распределение самых высокочастотных навыков за всё время для каждого года</p>
                 </div>
             </div>
-
         </section>
 
     </main>

@@ -10,41 +10,16 @@
         <section>
             <h3>Уровень зарплат по городам (в порядке убывания)</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ salary_by_area_data.image.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
-                <table>
-                   <thead>
-                       <tr><th>Город</th><th>Зарплата (руб.)</th></tr>
-                   </thead>
-                   <tbody>
-                       {% for area, salary in salary_by_area_table %}
-                           <tr>
-                               <td class="td-text">{{ area }}</td>
-                               <td>{{ salary }}</td>
-                           </tr>
-                       {% endfor %}
-                   </tbody>
-               </table>
+                <img class="block-image" src="{{ salary_by_area.image.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
+                {{ salary_by_area.table_data|safe }}
             </div>
         </section>
 
         <section>
             <h3>Доля вакансий по городам (в порядке убывания)</h3>
             <div class="image-table-wrapper">
-                <img class="block-image" src="{{ vacancies_fraction_by_area_data.image.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
-                <table>
-                   <thead>
-                       <tr><th>Город</th><th>Доля</th><th>%</th></tr>
-                   </thead>
-                   <tbody>
-                       {% for area, fraction, percentage in vacancies_fraction_by_area_table %}
-                           <tr>
-                               <td class="td-text">{{ area }}</td>
-                               <td>{{ fraction }}</td>
-                               <td>{{ percentage }}</td>
-                           </tr>
-                       {% endfor %}
-                   </tbody>
-               </table>
+                <img class="block-image" src="{{ vacancies_fraction_by_area.image.url }}" width="640" height="480" alt="График 'Динамика количества вакансий по годам'">
+                {{ vacancies_fraction_by_area.table_data|safe }}
             </div>
         </section>
 
