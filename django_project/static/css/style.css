@@ -358,6 +358,8 @@ footer.hidden {
     border: #4D4C49 solid 5px;
     border-radius: 50px;
     width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .vacancy-section h3 {
     font-size: 34px;
