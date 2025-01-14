@@ -25,41 +25,43 @@
     </header>
 
     <aside class="main-menu">
+        <button class="toggle-menu"><</button>
+
         <ul class="main-menu__items">
             <li class="main-menu__item {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
                 <a class="main-menu__link" href="{% url "index" %}">
-                    <img src="{% static "img/icons/icon-home.svg" %}" alt="icon-home" width="30" height="30">
-                    <span>Главная страница</span>
+                    <img class="page-icon" src="{% static "img/icons/icon-home.svg" %}" alt="icon-home" width="30" height="30">
+                    <span class="page-name">Главная страница</span>
                 </a>
             </li>
             <li class="main-menu__item {% if request.resolver_match.url_name == 'general-statistics' %}active{% endif %}">
                 <a class="main-menu__link" href="{% url "general-statistics" %}">
-                    <img src="{% static "img/icons/icon-stats.svg" %}" alt="icon-stats" width="30" height="30">
-                    <span>Общая статистика</span>
+                    <img class="page-icon" src="{% static "img/icons/icon-stats.svg" %}" alt="icon-stats" width="30" height="30">
+                    <span class="page-name">Общая статистика</span>
                 </a>
             </li>
             <li class="main-menu__item {% if request.resolver_match.url_name == 'demand' %}active{% endif %}">
                 <a class="main-menu__link" href="{% url "demand" %}">
-                    <img src="{% static "img/icons/icon-demand.svg" %}" alt="icon-" width="30" height="30">
-                    <span>Востребованность</span>
+                    <img class="page-icon" src="{% static "img/icons/icon-demand.svg" %}" alt="icon-" width="30" height="30">
+                    <span class="page-name">Востребованность</span>
                 </a>
             </li>
             <li class="main-menu__item {% if request.resolver_match.url_name == 'geography' %}active{% endif %}">
                 <a class="main-menu__link" href="{% url "geography" %}">
-                    <img src="{% static "img/icons/icon-globe.svg" %}" alt="icon-" width="30" height="30">
-                    <span>География</span>
+                    <img class="page-icon" src="{% static "img/icons/icon-globe.svg" %}" alt="icon-" width="30" height="30">
+                    <span class="page-name">География</span>
                 </a>
             </li>
             <li class="main-menu__item {% if request.resolver_match.url_name == 'skills' %}active{% endif %}">
                 <a class="main-menu__link" href="{% url "skills" %}">
-                    <img src="{% static "img/icons/icon-skills.svg" %}" alt="icon-" width="30" height="30">
-                    <span>Навыки</span>
+                    <img class="page-icon" src="{% static "img/icons/icon-skills.svg" %}" alt="icon-" width="30" height="30">
+                    <span class="page-name">Навыки</span>
                 </a>
             </li>
             <li class="main-menu__item {% if request.resolver_match.url_name == 'latest-vacancies' %}active{% endif %}">
                 <a class="main-menu__link" href="{% url "latest-vacancies" %}">
-                    <img src="{% static "img/icons/icon-clock.svg" %}" alt="icon-" width="30" height="30">
-                    <span>Последние вакансии</span>
+                    <img class="page-icon" src="{% static "img/icons/icon-clock.svg" %}" alt="icon-" width="30" height="30">
+                    <span class="page-name">Последние вакансии</span>
                 </a>
             </li>
         </ul>
@@ -76,6 +78,7 @@
         </div>
     </footer>
 
-    <script type="module" src="{% static "js/script.js" %}"></script>
+    <script type="module" src="{% static "js/toggle-panel.js" %}"></script>
+    {% block scripts %}{% endblock %}
 </body>
 </html>
