@@ -185,17 +185,18 @@ aside.hidden {
 }
 
 .toggle-menu {
+    padding: 2px;
+    position: absolute;
     left: 101%;
     top: 43%;
-    position: absolute;
     font-size: 16px;
     z-index: 10;
     background-color: #4D4C49;
     color: #a1b3be;
     height: 100px;
     border: #4D4C49 solid 3px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
 }
@@ -276,7 +277,7 @@ aside.hidden {
 
 /* main styles */
 main {
-    width: 80%;
+    width: calc(100% - 400px);
     margin-left: 360px;
     transition: transform 0.5s ease;
 }
